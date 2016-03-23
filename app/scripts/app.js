@@ -31,5 +31,10 @@ angular
         url: "/about",
         templateUrl: "views/about.html",
         controller: 'AboutCtrl'
+      })
+      .state('users', {
+        url: "/users",
+        templateUrl: "views/users.html",
+        controller: 'UsersCtrl'
       });
   });
