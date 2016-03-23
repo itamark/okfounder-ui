@@ -14,9 +14,7 @@ angular.module('okfounderApp')
     var UsersFactory = {};
     UsersFactory.getUsers = function(){
       var deferred = $q.defer();
-      $http.get('http://okfounder.herokuapp.com/users').then(function(res){
-        console.log('hi');
-        console.log(res);
+      $http.get('https://okfounder.herokuapp.com/users').then(function(res){
         deferred.resolve(res);
       });
       return deferred.promise;
