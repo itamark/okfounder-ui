@@ -36,5 +36,10 @@ angular
         url: "/users",
         templateUrl: "views/users.html",
         controller: 'UsersCtrl'
+      })
+      .state('search', {
+        url: "/search/:term",
+        templateUrl: "views/search.html",
+        controller: 'SearchCtrl'
       });
   });
