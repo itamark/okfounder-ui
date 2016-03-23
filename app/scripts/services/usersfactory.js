@@ -21,6 +21,14 @@ angular.module('okfounderApp')
       return deferred.promise;
     };
 
+    UsersFactory.getUserById = function(id){
+      var deferred = $q.defer();
+      $http.get('https://okfounder.herokuapp.com/users/'+id).then(function(res){
+        deferred.resolve(res);
+      });
+      return deferred.promise;
+    };
+
     UsersFactory.findUsers = function(term){
       var query = {'query': term};
       var queryString = Serialize(query);

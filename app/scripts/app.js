@@ -17,10 +17,9 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise("/");
-
     $stateProvider
       .state('main', {
         url: "/",
@@ -37,9 +36,14 @@ angular
         templateUrl: "views/users.html",
         controller: 'UsersCtrl'
       })
+      .state('users-single', {
+        url: "/users/:id",
+        templateUrl: "views/users-single.html",
+        controller: 'UsersCtrl'
+      })
       .state('search', {
         url: "/search/:term",
         templateUrl: "views/search.html",
         controller: 'SearchCtrl'
       });
-  });
+  }]);
