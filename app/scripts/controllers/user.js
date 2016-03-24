@@ -33,9 +33,9 @@ angular.module('okfounderApp')
       });
     };
 
-    $scope.findUsersByFacets = function(){
-      User.findUsersByFacets
-    }
+    //$scope.findUsersByFacets = function(){
+    //  User.findUsersByFacets
+    //}
 
 
     this.awesomeThings = [

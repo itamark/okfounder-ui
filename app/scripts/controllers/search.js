@@ -33,10 +33,7 @@ angular.module('okfounderApp')
         "None",
         "Less than $100,000",
         "$100K-$500,000",
-        "$500k-$1M",
-        "VP Sales",
-        "VP Product",
-        "VP Bizdev"
+        "$500k-$1M"
       ],
       num_people_in_venture:[
         "",
