@@ -5,22 +5,22 @@
       <ul class="nav navbar-nav">
         <div class="form-inline">
         <div class="form-group">
-          <select class="form-control" ng-model="search.lookingFor">
+          <select class="form-control" ng-model="search.looking_for" ng-change="updateUrl()">
             <option ng-repeat="term in searchParams.looking_for" value="{{term}}">{{$index === 0 ? 'Looking for' : term}}</option>
           </select>
         </div>
           <div class="form-group">
-            <select class="form-control" ng-model="search.stage">
+            <select class="form-control" ng-model="search.stage" ng-change="updateUrl()">
               <option ng-repeat="term in searchParams.stage" value="{{term}}">{{$index === 0 ? 'Stage' : term}}</option>
             </select>
           </div>
           <div class="form-group">
-            <select class="form-control" ng-model="search.funding_stage">
+            <select class="form-control" ng-model="search.funding_stage" ng-change="updateUrl()">
               <option ng-repeat="term in searchParams.funding_stage" value="{{term}}">{{$index === 0 ? 'Funding Stage' : term}}</option>
             </select>
           </div>
           <div class="form-group">
-            <select class="form-control" ng-model="search.num_people_in_venture">
+            <select class="form-control" ng-model="search.num_people_in_venture" ng-change="updateUrl()">
               <option ng-repeat="term in searchParams.num_people_in_venture" value="{{term}}">{{$index === 0 ? 'Number of People' : term}}</option>
             </select>
           </div>
@@ -30,7 +30,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 Showing {{filtered.length}} results
-<div class="panel panel-default" ng-repeat="user in filtered = (users | filter:{looking_for: search.looking_for}: false | filter: {
+<div class="panel panel-default" ng-repeat="user in filtered = (users | filter: {
 num_people_in_venture: search.num_people_in_venture,
 stage: search.stage,
 funding_stage: search.funding_stage,

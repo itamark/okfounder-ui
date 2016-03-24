@@ -14,7 +14,7 @@ angular.module('okfounderApp')
       looking_for:[
         "",
         "CEO",
-        "CTO / VP R&D / Lead Developer / Chief Scientist",
+        "CTO / VP R&D",
         "CMO / VP Marketing",
         "CFO / VP Finance",
         "VP Sales",
@@ -56,6 +56,11 @@ angular.module('okfounderApp')
         "Some salary, some equity",
         "Mostly equity"
       ]
+    };
+
+    $scope.updateUrl = function(){
+      console.log($scope.search);
+      $state.transitionTo('main', $scope.search, { notify: false });
     };
 
     $scope.search = {
