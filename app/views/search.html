@@ -1,1 +1,55 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <div class="form-inline">
+        <div class="form-group">
+          <select class="form-control" ng-model="search.lookingFor">
+            <option ng-repeat="term in searchParams.looking_for" value="{{term}}">{{$index === 0 ? 'Looking for' : term}}</option>
+          </select>
+        </div>
+          <div class="form-group">
+            <select class="form-control" ng-model="search.stage">
+              <option ng-repeat="term in searchParams.stage" value="{{term}}">{{$index === 0 ? 'Stage' : term}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control" ng-model="search.funding_stage">
+              <option ng-repeat="term in searchParams.funding_stage" value="{{term}}">{{$index === 0 ? 'Funding Stage' : term}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control" ng-model="search.funding_stage">
+              <option ng-repeat="term in searchParams.num_people_in_venture" value="{{term}}">{{$index === 0 ? 'Number of People' : term}}</option>
+            </select>
+          </div>
+        </div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="user in users">
+    <td>{{user.name}}</td>
+    <td>{{user.city}}</td>
+    <td>{{user.description}}</td>
+  </tr>
+  </tbody>
+</table>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Description</th>
+  </tr>
+</table>
 {{users}}

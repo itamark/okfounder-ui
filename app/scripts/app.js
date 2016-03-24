@@ -19,7 +19,7 @@ angular
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/search");
     $stateProvider
       .state('main', {
         url: "/",
@@ -39,6 +39,11 @@ angular
       .state('users-single', {
         url: "/users/:id",
         templateUrl: "views/users-single.html",
+        controller: 'UsersCtrl'
+      })
+      .state('users-create', {
+        url: "/users/create/new",
+        templateUrl: "views/users-create.html",
         controller: 'UsersCtrl'
       })
       .state('search', {

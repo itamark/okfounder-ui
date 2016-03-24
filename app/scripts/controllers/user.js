@@ -9,6 +9,10 @@
  */
 angular.module('okfounderApp')
   .controller('UsersCtrl', ['UsersFactory', '$scope', '$state', function (User, $scope, $state) {
+    $scope.user = {
+      name: '',
+      desc: ''
+    };
     // if it's not a single user
     if(!$state.params.id){
       User.getUsers().then(function(res){
@@ -20,6 +24,17 @@ angular.module('okfounderApp')
         $scope.user = res.data.users[0];
         console.log($scope.user);
       });
+    }
+
+    $scope.createUser = function(){
+      User.create($scope.user).then(function(res){
+        console.log(res);
+        //$scope.user = res.data.users[0];
+      });
+    };
+
+    $scope.findUsersByFacets = function(){
+      User.findUsersByFacets
     }
 
 

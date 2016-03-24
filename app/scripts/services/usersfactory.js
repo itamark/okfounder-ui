@@ -15,7 +15,7 @@ angular.module('okfounderApp')
 
     UsersFactory.getUsers = function(){
       var deferred = $q.defer();
-      $http.get('https://okfounder.herokuapp.com/users').then(function(res){
+      $http.get('https://okfounder.herokuapp.com/users/all').then(function(res){
         deferred.resolve(res);
       });
       return deferred.promise;
@@ -29,6 +29,14 @@ angular.module('okfounderApp')
       return deferred.promise;
     };
 
+    UsersFactory.create = function(user){
+      var deferred = $q.defer();
+      $http.post('http://okfounder.herokuapp.com/users/create', user).then(function(res){
+        deferred.resolve(res);
+      });
+      return deferred.promise;
+    };
+
     UsersFactory.findUsers = function(term){
       var query = {'query': term};
       var queryString = Serialize(query);
@@ -37,6 +45,20 @@ angular.module('okfounderApp')
         deferred.resolve(res);
       });
       return deferred.promise;
+    };
+
+    UsersFactory.findUsersByFacets = function(params){
+      // build queryString
+      var queryString = '';
+      for(var i=0; i<params.length; i++){
+        if(i>0){
+          queryString+='&';
+        }
+        queryString+=params[i].facet+'='+params[i].value;
+      }
+      $http.get('https://okfounder.herokuapp.com/users/by_facets?'+queryString).then(function(res){
+        deferred.resolve(res);
+      });
     };
 
 
