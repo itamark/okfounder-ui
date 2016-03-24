@@ -14,12 +14,13 @@ angular.module('okfounderApp')
       looking_for:[
         "",
         "CEO",
-        "CTO",
-        "CMO",
-        "CFO",
+        "CTO / VP R&D / Lead Developer / Chief Scientist",
+        "CMO / VP Marketing",
+        "CFO / VP Finance",
         "VP Sales",
         "VP Product",
-        "VP Bizdev"
+        "VP Bizdev",
+        "Other"
       ],
       stage:[
         "",

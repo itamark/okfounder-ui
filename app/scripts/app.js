@@ -19,12 +19,14 @@ angular
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise("/search");
+    $locationProvider.html5Mode(true);
+
+    $urlRouterProvider.otherwise("/search/");
     $stateProvider
       .state('main', {
         url: "/",
-        templateUrl: "views/main.html",
-        controller: "MainCtrl"
+        templateUrl: "views/search.html",
+        controller: "SearchCtrl"
       })
       .state('about', {
         url: "/about",
