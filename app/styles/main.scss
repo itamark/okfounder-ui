@@ -67,6 +67,13 @@ body {
   }
 }
 
+
+.navbar-brand{
+  img{
+    height: 100%;
+  }
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -83,9 +90,30 @@ body {
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
+    .navbar{
+      margin-bottom:0px;
+    }
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+.panel{
+  border-radius:0px;
+  margin-bottom: 0px;
+  h5{
+    margin:0px;
+  }
+  &:not(:last-child){
+    border-bottom: 0px;
+  }
+  .panel-heading{
+    background-color:white;
+    border-bottom: 0;
+  }
+  .panel-body{
+    padding:0px 15px 15px 15px;
   }
 }

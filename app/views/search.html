@@ -1,40 +1,48 @@
 <div class="container-fluid">
   <!-- Collect the nav links, forms, and other content for toggling -->
+  <!--<div class="jumbotron">-->
+    <!--<h1>Welcome!</h1>-->
+    <!--<p>okFounder is the number one place for C-level executives to find startups hiring for their position.</p>-->
+    <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+  <!--</div>-->
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-3">
       <div class="form-group">
-        <select class="form-control" ng-model="search.lookingFor">
+        <select class="form-control" ng-model="search.looking_for">
           <option ng-repeat="term in searchParams.looking_for" value="{{term}}">{{$index === 0 ? 'Looking for' : term}}</option>
         </select>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-3">
       <div class="form-group">
         <select class="form-control" ng-model="search.stage">
           <option ng-repeat="term in searchParams.stage" value="{{term}}">{{$index === 0 ? 'Stage' : term}}</option>
         </select>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-3">
       <div class="form-group">
         <select class="form-control" ng-model="search.funding_stage">
           <option ng-repeat="term in searchParams.funding_stage" value="{{term}}">{{$index === 0 ? 'Funding Stage' : term}}</option>
         </select>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-3">
       <div class="form-group">
         <select class="form-control" ng-model="search.num_people_in_venture">
           <option ng-repeat="term in searchParams.num_people_in_venture" value="{{term}}">{{$index === 0 ? 'Number of People' : term}}</option>
         </select>
       </div>
     </div>
+  </div>
+  <div class="row">
+
+  </div>
+  <div class="row">
+
+  </div>
+  <div class="row">
+
   </div>
 </div><!-- /.container-fluid -->
 Showing {{filtered.length}} results
@@ -44,7 +52,7 @@ stage: search.stage,
 funding_stage: search.funding_stage,
 looking_for: search.looking_for})">
   <div class="panel-heading">
-    <h4>{{user.name}}</h4>
+    <h5>{{user.name}}</h5>
   </div>
   <div class="panel-body">
     <div class="row">
