@@ -32,9 +32,11 @@ angular.module('okfounderApp')
       funding_stage:[
         "",
         "None",
-        "Less than $100,000",
-        "$100K-$500,000",
-        "$500k-$1M"
+        "Less than 100,000$",
+        "100K-500,000$",
+        "500K-1M$",
+        "Over 1M$+",
+        "Other/Would rather not say"
       ],
       num_people_in_venture:[
         "",
